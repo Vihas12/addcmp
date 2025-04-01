@@ -31,9 +31,9 @@ use_gpu = torch.cuda.is_available()
 reader = easyocr.Reader(['en'], gpu=use_gpu)
 
 try:
-    vectorizer = joblib.load('vectorizer.pkl')
-    knn = joblib.load('knn_model.pkl')
-    df = pd.read_csv('addresses.csv')
+    vectorizer = joblib.load('./vectorizer.pkl')
+    knn = joblib.load('./knn_model.pkl')
+    df = pd.read_csv('./addresses.csv')
 except Exception as e:
     print(f"Error loading models: {e}")
     vectorizer, knn, df = None, None, None  # Prevent crashes
